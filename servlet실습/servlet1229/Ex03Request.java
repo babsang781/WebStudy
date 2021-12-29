@@ -18,51 +18,51 @@ public class Ex03Request extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		response.setContentType("text/html; charset=utf-8"); // ÀÎÄÚµù ±âº»°ª utf-8, ÇÏÁö¸¸ ÀÌÅ¬¸³½º°¡ euc-kr ÀÌ ±âº» °ª
+		response.setContentType("text/html; charset=utf-8"); // ì¸ì½”ë”© ê¸°ë³¸ê°’ utf-8, í•˜ì§€ë§Œ ì´í´ë¦½ìŠ¤ê°€ euc-kr ì´ ê¸°ë³¸ ê°’
 
-		// »ç¿ëÀÚ¿¡°Ô µ¥ÀÌÅÍ¸¦ Àü´ŞÇÏ±âÀ§ÇÑ °´Ã¼ »ı¼º
-		PrintWriter out = response.getWriter(); // new ¸¦ ÇÏÁö ¾Ê°í ¹Ş¾Æ¿È
+		// ì‚¬ìš©ìì—ê²Œ ë°ì´í„°ë¥¼ ì „ë‹¬í•˜ê¸°ìœ„í•œ ê°ì²´ ìƒì„±
+		PrintWriter out = response.getWriter(); // new ë¥¼ í•˜ì§€ ì•Šê³  ë°›ì•„ì˜´
 		String ip = request.getRemoteAddr();
 
 		out.print("<html>");
-		out.print("<head><title>request&response ½Ç½À</title></head>");
+		out.print("<head><title>request&response ì‹¤ìŠµ</title></head>");
 		out.print("<body>");
 
-		if (ip.equals("222.102.104.24") || ip.equals("121.147.155.180") || ip.equals("220.80.88.62")
-				|| ip.equals("211.63.240.99") || ip.equals("220.93.229.187")) {
+		if (ip.equals("") || ip.equals("") || ip.equals("")
+				|| ip.equals("") || ip.equals("")) {
 
-			out.println("<h1>¿ì¸® ÆÀ hello!</h1>");
-		} else if (ip == "http://220.80.203.113/") {
-			out.println("<h1>¾È³ç ÂùÈ£¾ß! È¯¿µ!</h1>");
-		} else if (ip == "59.0.236.189") {
-			out.println("<h2>¹ü¼ö ¿Ô³ª!¤»¤»</h2>");
-		} else if (ip == "59.0.236.207") {
-			out.println("<h3>°­»ç´Ô È¯¿µÇÕ´Ï´Ù!</h3>");
+			out.println("<h1>ìš°ë¦¬ íŒ€ hello!</h1>");
+		} else if (ip.equals("")) {
+			out.println("<h1>ì•ˆë…• ì°¬í˜¸ì•¼! í™˜ì˜!</h1>");
+		} else if (ip.equals("")) {
+			out.println("<h2>ë²”ìˆ˜ ì™”ë‚˜!ã…‹ã…‹</h2>");
+		} else if (ip.equals("") {
+			out.println("<h3>ê°•ì‚¬ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤!</h3>");
 		} else {
-			out.println("<h3>¼Õ´Ô È¯¿µÇÕ´Ï´Ù!</h3>");
+			out.println("<h3>ì†ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤!</h3>");
 		}
 		out.println("<hr size=\"10px\" color=\"orange\" />");
 		out.println("<ul>");
-		out.println("<li><a href=\"http://www.naver.com\">³×ÀÌ¹ö</a></li>");
-		out.println("<li><a href=\"https://start211120.tistory.com\">ºí·Î±× start211120</a></li>"
+		out.println("<li><a href=\"http://www.naver.com\">ë„¤ì´ë²„</a></li>");
+		out.println("<li><a href=\"https://start211120.tistory.com\">ë¸”ë¡œê·¸ start211120</a></li>"
 				+ "</ul>");
 		out.println("<hr size=\"10px\" color=\"orange\" />");
 		out.print(""
 				+ "<table border=\"10px solid black\" align=\"center\">\r\n"
 				+ "      <caption>"
-				+ "        ¸Ş´ºÆÇ"
+				+ "        ë©”ë‰´íŒ"
 				+ "      </caption>"
 				+ "      <tr bgcolor=\"yellow\" height=\"50px\" align=\"center\">\r\n"
-				+ "        <th>¸Ş´º</th>"
-				+ "        <th>°¡°İ</th>"
+				+ "        <th>ë©”ë‰´</th>"
+				+ "        <th>ê°€ê²©</th>"
 				+ "      </tr>"
 				+ "      <tr align=\"center\">\r\n"
-				+ "        <td>¾ÆÀÌ½º ¾Æ¸Ş¸®Ä«³ë</td>\r\n"
-				+ "        <td>3500¿ø</td>\r\n"
+				+ "        <td>ì•„ì´ìŠ¤ ì•„ë©”ë¦¬ì¹´ë…¸</td>\r\n"
+				+ "        <td>3500ì›</td>\r\n"
 				+ "      </tr>\r\n"
 				+ "      <tr align=\"center\">\r\n"
-				+ "        <td>¾ÆÀÌ½º Ä«Æä¶ó¶¼</td>\r\n"
-				+ "        <td>4500¿ø</td>\r\n"
+				+ "        <td>ì•„ì´ìŠ¤ ì¹´í˜ë¼ë–¼</td>\r\n"
+				+ "        <td>4500ì›</td>\r\n"
 				+ "      </tr>\r\n"
 				+ "    </table>");
 		
