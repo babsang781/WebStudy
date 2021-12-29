@@ -15,34 +15,34 @@ public class Ex01Request extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// ¸Å°³º¯¼ö request ¿Í response ´Â ÀÎÅÍÆäÀÌ½º·Î ¼³Á¤ ÀÛ¼ºµÇ¾î ÀÖÀ½. 
-		// ºê¶ó¿ìÀú°¡ ¼­¹ö¿¡ ÁÖ¼Ò, ³»¿ë µîÀ» ´ã¾Æ¼­ º¸³»¸é,
-		// ±×·± Á¤º¸¸¦ ¼­¹ö°¡ ÇØ´ç Á¤º¸¸¦ ´ã¾ÆÁÖ°í, ÇØ´ç Á¤º¸¸¦ ÀÀ´äÇÔ.±× ÈÄ »èÁ¦ µÊ.
+		// ë§¤ê°œë³€ìˆ˜ request ì™€ response ëŠ” ì¸í„°í˜ì´ìŠ¤ë¡œ ì„¤ì • ì‘ì„±ë˜ì–´ ìˆìŒ. 
+		// ë¸Œë¼ìš°ì €ê°€ ì„œë²„ì— ì£¼ì†Œ, ë‚´ìš© ë“±ì„ ë‹´ì•„ì„œ ë³´ë‚´ë©´,
+		// ê·¸ëŸ° ì •ë³´ë¥¼ ì„œë²„ê°€ í•´ë‹¹ ì •ë³´ë¥¼ ë‹´ì•„ì£¼ê³ , í•´ë‹¹ ì •ë³´ë¥¼ ì‘ë‹µí•¨.ê·¸ í›„ ì‚­ì œ ë¨.
 		
-		// request(¿äÃ»°´Ã¼): »ç¿ëÀÚ°¡ ¿äÃ»À» ÇßÀ» ¶§ »ç¿ëÀÚÀÇ Á¤º¸¸¦ ÀúÀåÇÏ´Â °´Ã¼
-		// Á¤º¸: IP, ºê¶ó¿ìÀúÁ¤º¸( ¹öÀü, ¾ğ¾î , ÀÎÄÚµù¹æ½Ä µîµî..), »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ Á¤º¸µé
-		// ÀÏ´ÜÀº ÁÖ·Î »ç¿ëÀÚ ÀÔ·Â Á¤º¸¸¦ ´Ù·ç°Ô µÉ °Í
+		// request(ìš”ì²­ê°ì²´): ì‚¬ìš©ìê°€ ìš”ì²­ì„ í–ˆì„ ë•Œ ì‚¬ìš©ìì˜ ì •ë³´ë¥¼ ì €ì¥í•˜ëŠ” ê°ì²´
+		// ì •ë³´: IP, ë¸Œë¼ìš°ì €ì •ë³´( ë²„ì „, ì–¸ì–´ , ì¸ì½”ë”©ë°©ì‹ ë“±ë“±..), ì‚¬ìš©ìê°€ ì…ë ¥í•œ ì •ë³´ë“¤
+		// ì¼ë‹¨ì€ ì£¼ë¡œ ì‚¬ìš©ì ì…ë ¥ ì •ë³´ë¥¼ ë‹¤ë£¨ê²Œ ë  ê²ƒ
 		
-		// »ç¿ëÀÚ ip ¾Ë¾Æº¸±â ½Ç½À
+		// ì‚¬ìš©ì ip ì•Œì•„ë³´ê¸° ì‹¤ìŠµ
 		
 		String ip = request.getRemoteAddr();
 		
-		System.out.println("Á¢¼ÓÇÑ IP >> "+ip);
+		System.out.println("ì ‘ì†í•œ IP >> "+ip);
 		
-		if(ip.equals("222.102.104.24") ||ip.equals("121.147.155.180") ||ip.equals("220.80.88.62")||ip.equals("211.63.240.99")|| ip.equals("220.93.229.187")) {
-			System.out.println("¿ì¸® 1Â÷ ÇÁ·ÎÁ§Æ® ÆÀ¿ø È¯¿µÇÕ´Ï´Ù!");
+		if(ip.equals("") ||ip.equals("") ||ip.equals("")||ip.equals("")|| ip.equals("")) {
+			System.out.println("ìš°ë¦¬ 1ì°¨ í”„ë¡œì íŠ¸ íŒ€ì› í™˜ì˜í•©ë‹ˆë‹¤!");
 			
 			OutputStream os = response.getOutputStream();
 	        PrintStream out = new PrintStream(os, true);
-	        out.println("¿ì¸® ÆÀ hello! ");
+	        out.println("ìš°ë¦¬ íŒ€ hello! ");
 			
-		}else if(ip =="59.0.236.207") {
-			System.out.println("°­»ç´Ô È¯¿µÇÕ´Ï´Ù!");
+		}else if(ip.equals("")) {
+			System.out.println("ê°•ì‚¬ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤!");
 		}else {
-			System.out.println("¼Õ´Ô È¯¿µÇÕ´Ï´Ù!");
+			System.out.println("ì†ë‹˜ í™˜ì˜í•©ë‹ˆë‹¤!");
 		}
-//		211.223.37.175
-//		http://211.223.37.175:8081/Servlet/Ex01Request
+//		
+//		http://:8081/Servlet/Ex01Request
 //		
 		
 	}
