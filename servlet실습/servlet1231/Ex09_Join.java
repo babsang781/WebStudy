@@ -10,18 +10,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("Join")
+@WebServlet("/Join")
 public class Ex09_Join extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-		request.setCharacterEncoding("utf-8");// Post¹æ½ÄÀÏ ¶§ ÇÊ¼ö!
-		System.out.println("¿äÃ»ÀÌ µé¾î¿È..!");
+		request.setCharacterEncoding("utf-8");// Postë°©ì‹ì¼ ë•Œ í•„ìˆ˜!
+		System.out.println("ìš”ì²­ì´ ë“¤ì–´ì˜´..!");
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
-	
-		
+
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String name = request.getParameter("name");
@@ -33,30 +33,26 @@ public class Ex09_Join extends HttpServlet {
 		String color = request.getParameter("color");
 		String country = request.getParameter("country");
 		String talk = request.getParameter("talk");
-		
-		
-		out.print("<html><head><title>ÀÀ´ä°á°ú</title></head>");
+
+		out.print("<html><head><title>ì‘ë‹µê²°ê³¼</title></head>");
 		out.print("<body>");
-		out.print("<br/>ID: "+id);
-		out.print("<br/>NAME: "+name);
-		out.print("<br/>EMAIL: "+email);
-		out.print("<br/>GENDER: "+gender);
-		out.print("<br/>HOBBY: "+Arrays.toString(hobby));
-		out.print("<br/>BIRTHDAY: "+birthday);
-		out.print("<br/>COLOR: "+color);
-		out.print("<br/>COUNTRY: "+country);
-		out.print("<br/>TALK: "+talk);
-		
-		
-		
-		
-		
-		
+		out.print("ID: " + id);
+		out.print("<br/>PW: " + pw);
+		out.print("<br/>NAME: " + name);
+		out.print("<br/>TEL: " + tel);
+		out.print("<br/>EMAIL: " + email);
+		out.print("<br/>GENDER: " + gender);
+		out.print("<br/>HOBBY: "); 
+		for(int i = 0;i< hobby.length;i++) {
+			out.printf(hobby[i]+" ");
+		}
+		out.print("<br/>BIRTHDAY: " + birthday);
+		out.print("<br/>COLOR: " + color);
+		out.print("<br/>COUNTRY: " + country);
+		out.print("<br/>TALK: " + talk);
+
 		out.print("</body></html>");
 
-		
-	
-	
 	}
 
 }
