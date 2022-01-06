@@ -11,6 +11,6 @@
 	<form action="ParamServlet" method="get">
 	아이디:<input type="text" name ="name"><br/>
 	나이 :<input type="text" name ="age"> <br/>
-	<input type="submit"></form>
+	<input type="submit"value="전송" onclick="return check()"></form>
 </body>
 </html>
