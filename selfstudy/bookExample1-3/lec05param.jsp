@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>dd</title>
+<title>서블릿</title>
+	<script type="text/javascript" src="param.js"></script>
 </head>
 <body>
 	<form action="ParamServlet" method="get">
