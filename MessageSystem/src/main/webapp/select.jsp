@@ -1,43 +1,67 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<!-- 1.request¿µ¿ª¿¡ ÀúÀåµÈ Á¤º¸¸¦ °¡Á®¿À½Ã¿À. -->
+<%@page import="com.message.model.MemberDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<% 
+MemberDTO member = (MemberDTO) session.getAttribute("member");
+ArrayList<MemberDTO> m_list = new ArrayList<MemberDTO>();
+%>
+
+<!-- 1.requestì˜ì—­ì— ì €ì¥ëœ ì •ë³´ë¥¼ ê°€ì ¸ì˜¤ì‹œì˜¤. -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-		<title>Forty by HTML5 UP</title>
-		<meta charset="EUC-KR" />
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" href="assets/css/main.css" />
-		
-	</head>
-	<style>
+<head>
+<title>Forty by HTML5 UP</title>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+<style>
+</style>
+<body style="text-align: center;">
+	<!-- Wrapper -->
+
+	<div id="wrapper">
+
+		<!-- Menu -->
+		<nav id="Update">
+		<table>
+			<caption>
+				<h2>íšŒì›ê´€ë¦¬í˜ì´ì§€</h2>
+			</caption>
+			<tr>
+				<td>Email</td>
+				<td>Tel</td>
+				<td>Address</td>
+			</tr>
+
+			<!-- 2.ëª¨ë“  íšŒì›ì˜ ì´ë©”ì¼(email),ì „í™”ë²ˆí˜¸(tel),ì£¼ì†Œ(address)ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤. -->
+			<%
+			m_list = (ArrayList<MemberDTO>)request.getAttribute("m_list");
+
+			for( int i = 0; i < m_list.size() ;i++){ %>
+			<tr>
+				<td><%= m_list.get(i).getM_email()%></td>
+				<td><%= m_list.get(i).getM_tel()%></td>
+				<td><%= m_list.get(i).getM_address()%></td>
+			</tr>
+			<%} %>
+		</table>
+		</nav>
+		<a href="main.jsp" class="button next scrolly">ë˜ëŒì•„ê°€ê¸°</a>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
 	
-	</style>
-	<body style="text-align: center;">
-		<!-- Wrapper -->
-			<div id="wrapper">
-				<!-- Menu -->
-					<nav id="Update">	
-						<table>
-							<caption><h2>È¸¿ø°ü¸®ÆäÀÌÁö</h2></caption>
-							<tr>
-								<td>Email</td>
-								<td>Tel</td>
-								<td>Address</td>							
-							</tr>
-							<!-- 2.¸ğµç È¸¿øÀÇ ÀÌ¸ŞÀÏ(email),ÀüÈ­¹øÈ£(tel),ÁÖ¼Ò(address)¸¦ Ãâ·ÂÇÏ½Ã¿À. -->
-						</table>
-					</nav>		
-					<a href="main.jsp" class="button next scrolly">µÇµ¹¾Æ°¡±â</a>	
-			</div>
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-	</body>
+</body>
 </html>
 
